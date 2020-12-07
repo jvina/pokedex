@@ -39,7 +39,6 @@ class PokedexCard extends Component {
     weight: "",
     abilities: [],
     abilitiesLoaded: [],
-    isLoading: false
   }
 
   async componentDidMount() {
