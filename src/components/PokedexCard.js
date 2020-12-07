@@ -132,7 +132,6 @@ class PokedexCard extends Component {
               </div>
             </div>
           </div>
-
           <div className="card-body">
             <div className="row align-items-center">
               <div className="col-md-3">
@@ -268,7 +267,6 @@ class PokedexCard extends Component {
               </div>
             </div>
           </div>
-
         </div>
        <br />
       </div>
