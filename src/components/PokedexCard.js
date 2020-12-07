@@ -39,11 +39,6 @@ class PokedexCard extends Component {
     weight: "",
     abilities: [],
     abilitiesLoaded: [],
-    capture_rate: [],
-    capture_rateLoaded: [],
-    egg_groups: [],
-    egg_groupsLoaded: [],
-    hatch_counter: '',
     isLoading: false
   }
 
@@ -223,7 +218,7 @@ class PokedexCard extends Component {
                         aria-valuemin="0"
                         aria-valuemax="100"
                       >
-                        <small>{this.state.stats.hp}</small>
+                        <small>{this.state.stats.specialAttack}</small>
                       </div>
                     </div>
                   </div>
@@ -240,7 +235,7 @@ class PokedexCard extends Component {
                         aria-valuemin="0"
                         aria-valuemax="100"
                       >
-                        <small>{this.state.stats.hp}</small>
+                        <small>{this.state.stats.specialDefense}</small>
                       </div>
                     </div>
                   </div>
@@ -255,17 +250,17 @@ class PokedexCard extends Component {
               <div className="col-md-12">
                 <div className="row">
                   <div className="col-md-12">
-                    <div className="text-center">Height: {this.state.height} feet</div>
+                    <div className="text-center"><strong>Height: </strong> {this.state.height} feet</div>
                   </div>
                 </div>
                 <div className="row">
                   <div className="col-md-12">
-                    <div className="text-center">Weight: {this.state.weight} lbs</div>
+                    <div className="text-center"><strong>Weight: </strong>{this.state.weight} lbs</div>
                   </div>
                 </div>
                 <div className="row">
                   <div className="col-md-12">
-                    <div className="text-center">Abilities: {this.state.abilitiesLoaded}</div>
+                    <div className="text-center"><strong>Abilities: </strong>{this.state.abilitiesLoaded}</div>
                   </div>
                 </div>
               </div>

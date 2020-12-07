@@ -61,7 +61,7 @@ class FetchPokemon extends Component {
           <div className="row justify-content-center">
           <Loader
             type="Oval"
-            color="#05386B"
+            color="white"
             height={100}
             width={100}
           />
