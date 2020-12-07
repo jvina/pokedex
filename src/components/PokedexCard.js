@@ -254,35 +254,26 @@ class PokedexCard extends Component {
             <div className="row">
               <div className="col-md-12">
                 <div className="row">
-                  <div className="col-md-6">
-                    <h6 className="float-right">Height: </h6>
-                  </div>
-                  <div className="col-md-6">
-                    <h6 className="float-left">{this.state.height} feet</h6>
+                  <div className="col-md-12">
+                    <div className="text-center">Height: {this.state.height} feet</div>
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-md-6">
-                    <h6 className="float-right">Weight: </h6>
-                  </div>
-                  <div className="col-md-6">
-                    <h6 className="float-left">{this.state.weight} lbs</h6>
+                  <div className="col-md-12">
+                    <div className="text-center">Weight: {this.state.weight} lbs</div>
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-md-6">
-                    <h6 className="float-right">Abilities: </h6>
-                  </div>
-                  <div className="col-md-6">
-                    <h6 className="float-left">{this.state.abilitiesLoaded}</h6>
+                  <div className="col-md-12">
+                    <div className="text-center">Abilities: {this.state.abilitiesLoaded}</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-
         </div>
+       <br />
       </div>
     )
   }
