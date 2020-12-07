@@ -23,7 +23,6 @@ class FetchPokemon extends Component {
     const { name } = this.props
     axios.get(this.state.url + name)
      .then(res => {
-       console.log(res.data)
        this.setState({
          name: res.data.name,
          image: res.data.sprites["front_default"],
