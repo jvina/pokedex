@@ -1,12 +1,3 @@
-
-body,html{
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  background: #e74c3c !important;
-}
-
 .searchbar{
   margin-bottom: auto;
   margin-top: auto;
@@ -39,6 +30,7 @@ body,html{
 }
 
 .search_icon{
+  background-color: #353b48;
   margin-top: 5px;
   height: 32px;
   width: 32px;
@@ -47,6 +39,7 @@ body,html{
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  color:white;
+  border: none;
+  color:  #353b48;
   text-decoration:none;
 }

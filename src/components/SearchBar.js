@@ -1,22 +1,54 @@
+import React, { Component } from 'react';
+import Toolbar from '@material-ui/core/Toolbar';
+import FetchPokemon from './FetchPokemon';
 import '../css/searchbar.css'
 
-import React from 'react';
-import Toolbar from '@material-ui/core/Toolbar';
 
 
-function SearchBar() {
+class SearchBar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: '',
+      isSubmitted: false
+    };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.state.isSubmitted ? this.setState({isSubmitted : false}) :
+    this.setState({
+      name: event.target.value.toLowerCase()
+    })
+  }
+
+
+  handleSubmit(event) {
+    event.preventDefault();
+    this.setState({
+      isSubmitted: true
+    })
+  }
+
+
+  render() {
   return (
-    <div className="container h-100">
-    <Toolbar />
-    <div class="d-flex justify-content-center h-100">
-        <div class="searchbar">
-          <input class="search_input" type="text" placeholder="Search for a Pokémon..." />
-          <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+      <div className="container h-100">
+      <Toolbar />
+      <form onSubmit={ this.handleSubmit }>
+        <div className="d-flex justify-content-center h-100">
+            <div className="searchbar">
+              <input onChange={this.handleChange} className="search_input" type="text" placeholder="Search for a Pokémon..." />
+              <button onClick={this.handleSubmit} className="search_icon"><i className="fas fa-search"></i></button>
+            </div>
         </div>
-    </div>
-    </div>
-
-  )
+      </form>
+      {this.state.isSubmitted ? <FetchPokemon name={this.state.name}/> : null}
+      </div>
+    )
+  }
 }
 
 export default SearchBar
