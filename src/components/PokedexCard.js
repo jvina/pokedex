@@ -85,8 +85,10 @@ class PokedexCard extends Component {
 
     const type = this.state.types.map(type => type.type.name);
 
-    const ability = this.state.abilities.map(ability => {
-      return ability.ability.name.charAt(0).toUpperCase() + ability.ability.name.slice(1) + " "
+    const ability = this.state.abilities.map((ability, index) => {
+      if (index === this.state.abilities.length - 1)
+        return ability.ability.name.charAt(0).toUpperCase() + ability.ability.name.slice(1)
+      return ability.ability.name.charAt(0).toUpperCase() + ability.ability.name.slice(1) + ", "
     })
     this.setState({
       stats: {
