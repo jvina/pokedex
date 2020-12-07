@@ -46,28 +46,6 @@
 
 @media (max-width:480px) {
   .searchbar:hover > .search_input{
-    padding: 0 10px;
     width: 200px;
-    caret-color:red;
-    transition: width 0.4s linear;
-  }
-
-  .searchbar:hover > .search_icon{
-    background: url(../images/pokeball.png);
-  }
-
-  .search_icon{
-    background-color: #353b48;
-    margin-top: 5px;
-    height: 32px;
-    width: 32px;
-    float: right;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    border: none;
-    color:  #353b48;
-    text-decoration:none;
   }
 }

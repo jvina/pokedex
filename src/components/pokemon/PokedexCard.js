@@ -39,11 +39,12 @@ class PokedexCard extends Component {
     weight: "",
     abilities: [],
     abilitiesLoaded: [],
+    isLoading: false
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const { id, name, imageUrl, stats, types, height, weight, abilities}  = this.props
-    this.setState({
+    await this.setState({
       id,
       name,
       imageUrl,
@@ -89,7 +90,6 @@ class PokedexCard extends Component {
         return ability.ability.name.charAt(0).toUpperCase() + ability.ability.name.slice(1)
       return ability.ability.name.charAt(0).toUpperCase() + ability.ability.name.slice(1) + ", "
     })
-
     this.setState({
       stats: {
         hp,

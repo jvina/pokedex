@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Toolbar from '@material-ui/core/Toolbar';
-import FetchPokemon from './FetchPokemon';
+import FetchPokemon from './pokemon/FetchPokemon';
 import '../css/searchbar.css'
-
 
 
 class SearchBar extends Component {
@@ -24,7 +23,6 @@ class SearchBar extends Component {
     })
   }
 
-
   handleSubmit(event) {
     event.preventDefault();
     this.setState({
@@ -37,7 +35,7 @@ class SearchBar extends Component {
   return (
       <div className="container h-100">
       <Toolbar />
-      <form onSubmit={ this.handleSubmit }>
+      <form onSubmit={this.handleSubmit}>
         <div className="d-flex justify-content-center h-100">
             <div className="searchbar">
               <input onChange={this.handleChange} className="search_input" type="text" placeholder="Search for a Pokémon..." />
@@ -45,7 +43,7 @@ class SearchBar extends Component {
             </div>
         </div>
       </form>
-      {this.state.isSubmitted ? <FetchPokemon name={this.state.name}/> : null}
+      {this.state.isSubmitted ? <FetchPokemon name={this.state.name} /> : null}
       </div>
     )
   }
