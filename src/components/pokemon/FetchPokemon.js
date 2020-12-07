@@ -1,7 +1,6 @@
 import React, { Component }  from 'react';
 import Loader from 'react-loader-spinner';
 import Toolbar from '@material-ui/core/Toolbar';
-
 import PokedexCard from './PokedexCard';
 import axios from 'axios';
 
