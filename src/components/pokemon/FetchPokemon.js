@@ -18,28 +18,24 @@ class FetchPokemon extends Component {
     isLoaded: false
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const { name } = this.props
-    axios.get(this.state.url + name)
-     .then(res => {
-       this.setState({
-         name: res.data.name.charAt(0).toUpperCase() + res.data.name.slice(1),
-         image: res.data.sprites["front_default"],
-         id: res.data.id,
-         stats: res.data.stats,
-         types: res.data.types,
-         abilities: res.data.abilities,
-         // convert decimetres to feet
-         height: (res.data.height / 3.048).toFixed(2),
-         // convert hectograms to lbs
-         weight: (res.data.weight / 4.536).toFixed(1),
-         isLoaded: true
-       })
-     })
-     .catch(function (error) {
-        console.log(error);
-      });
+    const res = await axios.get(this.state.url + name)
+    this.setState({
+      name: res.data.name.charAt(0).toUpperCase() + res.data.name.slice(1),
+      image: res.data.sprites["front_default"],
+      id: res.data.id,
+      stats: res.data.stats,
+      types: res.data.types,
+      abilities: res.data.abilities,
+      // convert decimetres to feet
+      height: (res.data.height / 3.048).toFixed(2),
+      // convert hectograms to lbs
+      weight: (res.data.weight / 4.536).toFixed(1),
+      isLoaded: true
+    });
   }
+
   render() {
     return (
       <React.Fragment>

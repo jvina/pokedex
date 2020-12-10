@@ -87,8 +87,7 @@ class PokedexCard extends Component {
         specialDefense
       },
       typesLoaded: type,
-      abilitiesLoaded: ability,
-      isLoading: true
+      abilitiesLoaded: ability
     })
   };
 
@@ -103,8 +102,8 @@ class PokedexCard extends Component {
         height,
         weight,
         abilities
-      }, () => {
-        this.handleStates()
+    }, () => {
+      this.handleStates()
     });
   }
 
