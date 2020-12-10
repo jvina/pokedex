@@ -41,21 +41,8 @@ class PokedexCard extends Component {
     abilitiesLoaded: [],
   }
 
-  async componentDidMount() {
-    const { id, name, imageUrl, stats, types, height, weight, abilities}  = this.props
-    await this.setState({
-      id,
-      name,
-      imageUrl,
-      types,
-      stats,
-      height,
-      weight,
-      abilities
-    })
-
+  handleStates = () => {
     let { hp, attack, defense, speed, specialAttack, specialDefense } = '';
-
     this.state.stats.map(stat => {
       switch(stat.stat.name) {
         case 'hp':
@@ -88,7 +75,8 @@ class PokedexCard extends Component {
       if (index === this.state.abilities.length - 1)
         return ability.ability.name.charAt(0).toUpperCase() + ability.ability.name.slice(1)
       return ability.ability.name.charAt(0).toUpperCase() + ability.ability.name.slice(1) + ", "
-    })
+    });
+
     this.setState({
       stats: {
         hp,
@@ -102,6 +90,22 @@ class PokedexCard extends Component {
       abilitiesLoaded: ability,
       isLoading: true
     })
+  };
+
+  componentDidMount() {
+    const { id, name, imageUrl, stats, types, height, weight, abilities}  = this.props
+    this.setState({
+        id,
+        name,
+        imageUrl,
+        types,
+        stats,
+        height,
+        weight,
+        abilities
+      }, () => {
+        this.handleStates()
+    });
   }
 
   render() {
