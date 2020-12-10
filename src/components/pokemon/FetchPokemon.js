@@ -38,7 +38,7 @@ class FetchPokemon extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <>
         <Toolbar />
         {this.state.isLoaded ?
           <div className="row justify-content-center">
@@ -63,7 +63,7 @@ class FetchPokemon extends Component {
           />
           </div>
        }
-      </React.Fragment>
+      </>
     )
   }
 }
