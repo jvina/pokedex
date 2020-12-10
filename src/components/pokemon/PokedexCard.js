@@ -46,22 +46,22 @@ class PokedexCard extends Component {
     this.state.stats.map(stat => {
       switch(stat.stat.name) {
         case 'hp':
-          hp = stat['base_stat'];
+          hp = stat.base_stat;
           break;
         case 'attack':
-          attack = stat['base_stat'];
+          attack = stat.base_stat;
           break;
         case 'defense':
-          defense = stat['base_stat'];
+          defense = stat.base_stat;
           break;
         case 'speed':
-          speed = stat['base_stat'];
+          speed = stat.base_stat;
           break;
         case 'special-attack':
-          specialAttack = stat['base_stat'];
+          specialAttack = stat.base_stat;
           break;
         case 'special-defense':
-          specialDefense = stat['base_stat'];
+          specialDefense = stat.base_stat;
           break;
         default:
           break;
