@@ -5,25 +5,19 @@ import '../css/searchbar.css'
 
 
 class SearchBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: '',
-      isSubmitted: false
-    };
+  state = {
+    name: '',
+    isSubmitted: false
+  };
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(event) {
+  handleChange = (event) => {
     this.state.isSubmitted ? this.setState({isSubmitted : false}) :
     this.setState({
       name: event.target.value.toLowerCase()
     })
   }
 
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault();
     this.setState({
       isSubmitted: true
